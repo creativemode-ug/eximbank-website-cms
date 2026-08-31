@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply font-open scroll-smooth;
+    }
+
+    input[type="checkbox"] {
+        @apply p-2 border border-zinc-200 ring-0 focus:outline-none focus:ring-transparent focus:border-primary rounded-sm;
+    }
+
+    input[type="radio"] {
+        @apply p-2 border border-zinc-200 ring-0 hover:bg-primary focus:outline-none focus:ring-transparent focus:border-primary;
+    }
+
+    input[type="radio"]:checked,
+    input[type="checkbox"]:checked {
+        @apply bg-primary focus:bg-primary ring-0 hover:bg-primary;
+    }
+}
+
+@layer utilities {
+    .layout-container {
+        @apply px-4 md:px-6 3xl:px-10;
+    }
+
+    .quote {
+        @apply border-l-4 border-secondary-200 bg-secondary-50 px-4 py-3;
+    }
+
+    .editor {
+        @apply text-zinc-800 rounded overflow-hidden;
+    }
+
+    .editor-content {
+        @apply prose-headings:text-lg prose-headings:font-medium prose-headings:mb-2 prose-blockquote:px-4 prose-blockquote:py-3 prose-blockquote:border-l-4 prose-blockquote:border-secondary-200 prose-blockquote:bg-secondary-50 prose-ul:list-outside prose-ul:list-decimal prose-ul:pl-3 prose-ul:space-y-2 prose-a:text-primary-accent prose-a:underline;
+    }
+
+    .input {
+        @apply w-full px-3 py-2.5 text-sm font-normal border placeholder-zinc-400 rounded-md;
+    }
+
+    .input-default {
+        @apply text-zinc-600 border-zinc-300 focus:border-primary-accent focus:outline-none focus:ring-primary-accent;
+    }
+
+    .input-error {
+        @apply text-red-700 bg-red-50 border-red-700 focus:border-red-700 focus:outline-none focus:ring-red-700;
+    }
+
+    .clip-trapezium-br-sm {
+        clip-path: polygon(0 0, 100% 0, 100% 88%, 86% 100%, 0 100%, 0% 50%);
+    }
+
+    .clip-polygon-cta {
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 30%,
+            100% 70%,
+            100% 100%,
+            19% 100%,
+            19% 73%,
+            0 58%
+        );
+    }
+
+    .clip-soft-border {
+        filter: url("#roundedClipBorder");
+    }
+}
